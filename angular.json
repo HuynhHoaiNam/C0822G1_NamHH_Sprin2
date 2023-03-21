@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "fe-spring2"
+  "defaultProject": "fe-spring2",
+  "cli": {
+    "analytics": "5569bdf2-ad01-4dc5-ae19-75105c76ef04"
+  }
 }
