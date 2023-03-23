@@ -3,42 +3,42 @@ package com.example.bespring2.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
-    private boolean gender;
-    private String dateOfBirth;
-    private String address;
-    private String idCard;
+    private String username;
+    private String password;
     private String phoneNumber;
     private String email;
-    private String userName;
-    private String password;
+    private String address;
+    private Integer age;
+    private Boolean gender;
+    private String dateOfBirth;
     private String avatar;
     @ManyToMany(fetch = FetchType.EAGER)
-    @JsonBackReference
-    private Set<Role> roles;
+    private Set<Role> roles = new HashSet<>();
 
     public User() {
     }
 
     public User(String username, String password, String name, String email) {
-        this.userName = username;
+        this.username = username;
         this.password = password;
         this.name = name;
         this.email = email;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -50,36 +50,20 @@ public class User {
         this.name = name;
     }
 
-    public boolean isGender() {
-        return gender;
+    public String getUsername() {
+        return username;
     }
 
-    public void setGender(boolean gender) {
-        this.gender = gender;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+    public String getPassword() {
+        return password;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getIdCard() {
-        return idCard;
-    }
-
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPhoneNumber() {
@@ -98,20 +82,36 @@ public class User {
         this.email = email;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getAddress() {
+        return address;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getPassword() {
-        return password;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Boolean getGender() {
+        return gender;
+    }
+
+    public void setGender(Boolean gender) {
+        this.gender = gender;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getAvatar() {

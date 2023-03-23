@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class OrderDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private int quantity;
     private boolean flag;
     @ManyToOne
@@ -19,11 +19,11 @@ public class OrderDetail {
     public OrderDetail() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -8,11 +8,9 @@ import java.util.Set;
 public class Watch {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
-    private boolean gender;
     private double price;
-    private String country;
     private String origin;
     private String face;
     private String strapType;
@@ -31,11 +29,11 @@ public class Watch {
     public Watch() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -47,14 +45,6 @@ public class Watch {
         this.name = name;
     }
 
-    public boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(boolean gender) {
-        this.gender = gender;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -63,13 +53,6 @@ public class Watch {
         this.price = price;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
 
     public String getOrigin() {
         return origin;
