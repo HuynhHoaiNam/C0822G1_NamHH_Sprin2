@@ -15,6 +15,7 @@ public class Watch {
     private String face;
     private String strapType;
     private boolean flag;
+    @Column(columnDefinition = "longtext")
     private String note;
     private String color;
     @ManyToOne
