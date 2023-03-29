@@ -18,9 +18,10 @@ public class Watch {
     @Column(columnDefinition = "longtext")
     private String note;
     private String color;
+    private int quantity;
     @ManyToOne
-    @JoinColumn(name = "trademark_id", nullable = false, referencedColumnName = "id")
-    private Trademark trademark;
+    @JoinColumn(name = "trademarkT_id", nullable = false, referencedColumnName = "id")
+    private TrademarkT trademarkT;
     @ManyToOne
     @JoinColumn(name = "watchType_id", nullable = false, referencedColumnName = "id")
     private WatchType watchType;
@@ -103,12 +104,12 @@ public class Watch {
         this.color = color;
     }
 
-    public Trademark getTrademark() {
-        return trademark;
+    public TrademarkT getTrademarkT() {
+        return trademarkT;
     }
 
-    public void setTrademark(Trademark trademark) {
-        this.trademark = trademark;
+    public void setTrademarkT(TrademarkT trademarkT) {
+        this.trademarkT = trademarkT;
     }
 
     public WatchType getWatchType() {
@@ -125,5 +126,13 @@ public class Watch {
 
     public void setImages(Set<Image> images) {
         this.images = images;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
